@@ -11,6 +11,7 @@ namespace Aoc.Puzzles
     public class _3
     {
         public int OverlapFabric { get; set; }
+        public Claim IntactClaim { get; set; }
 
         public void Run()
         {
@@ -40,6 +41,7 @@ namespace Aoc.Puzzles
             }
 
             var overlapPoints = new HashSet<Point>(new PointComparer());
+            var overlappingClaims = new List<Claim>();
             foreach (var claimA in claims)
             {
                 foreach (var claimB in claims)
@@ -51,6 +53,8 @@ namespace Aoc.Puzzles
                     if (overlapRect.IsEmpty)
                         continue;
 
+                    overlappingClaims.Add(claimA);
+
                     foreach (var point in overlapRect.Points())
                     {
                         overlapPoints.Add(point);
@@ -58,6 +62,7 @@ namespace Aoc.Puzzles
                 }
             }
             OverlapFabric = overlapPoints.Count;
+            IntactClaim = claims.Except(overlappingClaims).FirstOrDefault();
         }
     }
 
