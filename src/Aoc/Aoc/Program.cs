@@ -18,7 +18,9 @@ namespace Aoc
             var three = new _3();
             three.Run();
 
-
+            var four = new _4();
+            four.Run();
+            Console.WriteLine(four.ToString());
             Console.ReadLine();
         }
 
