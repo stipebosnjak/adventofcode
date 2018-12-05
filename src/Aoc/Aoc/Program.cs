@@ -15,6 +15,10 @@ namespace Aoc
             var two = new _2();
             two.Run();
 
+            var three = new _3();
+            three.Run();
+
+
             Console.ReadLine();
         }
 

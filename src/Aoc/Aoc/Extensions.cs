@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Aoc
 {
-   public static class Extensions
+    public static class Extensions
     {
         public static IEnumerable<T> TakeWhile<T>(this IEnumerable<T> source, Func<T, bool> predicate, bool inclusive)
         {
@@ -57,6 +59,17 @@ namespace Aoc
                 );
             }
             return distances[lengthA, lengthB];
+        }
+
+        public static IEnumerable<Point> Points(this Rectangle rectangle)
+        {
+            for (int up = 0; up < rectangle.Height; up++)
+            {
+                for (int right = 0; right < rectangle.Width; right++)
+                {
+                    yield return new Point(rectangle.X + right, rectangle.Y + up);
+                }
+            }
         }
     }
 }
