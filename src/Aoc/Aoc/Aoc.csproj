@@ -52,6 +52,7 @@
     <Compile Include="Puzzles\2.cs" />
     <Compile Include="Puzzles\3.cs" />
     <Compile Include="Puzzles\4.cs" />
+    <Compile Include="Puzzles\5.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,6 +68,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Puzzles\4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Puzzles\5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
